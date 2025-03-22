@@ -1,0 +1,40 @@
+body{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color:black;
+    height:100vh;
+}
+.solar-system{
+    position:relative;
+    width:400px;
+    height:400px;
+    animation-name: moveEarth;
+}
+.sun{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:250px;
+    height:250px;
+    transform: translate(-50%, -50%);
+    border-radius:50%;
+    background-color:yellow;
+    box-shadow: 0 0 50px orange;
+}
+.earth{
+    position:absolute;
+    top: 50%;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    background-color:blue;
+    box-shadow: 0 0 30px white;
+    animation: moveEarth 3s linear infinite;
+}
+@keyframes moveEarth {
+    0% { left: 0px; z-index: 10; }
+    49% { left: 350px; z-index: 10; }
+    50% { left: 350px; z-index: -1; } 
+    100% { left: 0px; z-index: -1; }
+}
